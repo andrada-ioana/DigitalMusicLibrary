@@ -1,0 +1,50 @@
+.card-img-top {
+    height: 140px;
+    object-fit:fill;
+}
+
+.card {
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card-body {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.card-artist {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.play-button {
+    background-color: rgb(187, 143, 227);
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 14px;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.card-title-artist {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}

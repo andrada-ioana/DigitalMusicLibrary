@@ -1,0 +1,25 @@
+.list-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.song-length {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  padding-top: 4px;
+}
+
+.fav-length {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

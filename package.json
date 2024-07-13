@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "lowdb": "^7.0.1",
+    "react-bootstrap": "^2.10.4",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.24.1"
   }
 }

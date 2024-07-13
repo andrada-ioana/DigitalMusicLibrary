@@ -1,0 +1,9 @@
+.album-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.album {
+        padding-bottom: 60px;
+}
