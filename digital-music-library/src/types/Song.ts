@@ -3,4 +3,5 @@ export interface Song {
     title: string;
     length: string;
     isFavourite: boolean;
+    albumID: string;
 }

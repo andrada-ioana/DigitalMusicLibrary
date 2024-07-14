@@ -3,8 +3,15 @@ import CustomButton from "../components/CustomButton";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import SongsList from "../components/SongsList";
 import "./AlbumPage.css";
+import { Album } from "../types/Album";
+import { Artist } from "../types/Artist";
 
-const AlbumPage: React.FC = () => {
+interface AlbumPageProps {
+  album: Album;
+  artists: Artist[];
+}
+
+const AlbumPage: React.FC<AlbumPageProps> = ({ album, artists }) => {
   return (
     <div>
       <CustomButton
@@ -16,27 +23,16 @@ const AlbumPage: React.FC = () => {
       <div className="album-content">
         <div className="album">
           <AlbumDescription
-            title="1989"
-            artist="Taylor Swift"
-            description="1989 is the fifth studio album by American singer-songwriter Taylor Swift, released on October 27, 2014, through Big Machine Records. Following the release of her genre-spanning fourth studio album Red (2012), noted for pop hooks and electronic production, the media questioned the validity of Swift's status as a country artist."
+            title={album.title}
+            artist={
+              artists.find((artist) => artist.id === album.artistID)?.name ||
+              "Unknown Artist"
+            }
+            description={album.description}
           />
         </div>
-        <SongsList
-          songs={[
-            {
-              id: "1",
-              title: "Welcome to New York",
-              length: "3:32",
-              isFavourite: false,
-            },
-            {
-              id: "2",
-              title: "Blank Space",
-              length: "3:51",
-              isFavourite: false,
-            },
-          ]}
-        />
+        /// Add the SongsList component here
+        <SongsList songs={[]} />
       </div>
     </div>
   );

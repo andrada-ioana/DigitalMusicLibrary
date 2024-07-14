@@ -2,8 +2,21 @@ import CustomButton from "../components/CustomButton";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import AlbumCard from "../components/AlbumCard";
 import ArtistCard from "../components/ArtistCard";
+import { Artist } from "../types/Artist";
+import { Album } from "../types/Album";
 
-const HomePage: React.FC = () => {
+interface HomePageProps {
+  artists: Artist[];
+}
+
+const HomePage: React.FC<HomePageProps> = ({ artists }) => {
+  const getArtistNameById = (artistId: string): string => {
+    const foundArtist = artists.find((artist) => artist.id === artistId);
+    return foundArtist ? foundArtist.name : "Unknown Artist";
+  };
+
+  const allAlbums: Album[] = artists.flatMap((artist) => artist.albums);
+
   return (
     <div>
       <div>
@@ -15,8 +28,10 @@ const HomePage: React.FC = () => {
         />
       </div>
 
-      <div>
-        <ArtistCard name="Taylor Swift" />
+      <div className="artists-scroll">
+        {artists.map((artist) => (
+          <ArtistCard key={artist.id} name={artist.name} />
+        ))}
       </div>
 
       <div>
@@ -27,8 +42,15 @@ const HomePage: React.FC = () => {
           iconBack={<IoIosArrowRoundForward size="30" />}
         />
       </div>
+
       <div>
-        <AlbumCard title="1989" artist="Taylor Swift" />
+        {allAlbums.map((album: Album) => (
+          <AlbumCard
+            key={album.id}
+            title={album.title}
+            artist={getArtistNameById(album.artistID)}
+          />
+        ))}
       </div>
     </div>
   );

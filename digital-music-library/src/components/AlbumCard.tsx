@@ -12,7 +12,7 @@ interface AlbumCardProps {
 
 const AlbumCard: React.FC<AlbumCardProps> = ({ title, artist, image }) => {
   return (
-    <div className="card">
+    <div className="card-style">
       <img
         src={image || defaultImage}
         className="card-img-top"
