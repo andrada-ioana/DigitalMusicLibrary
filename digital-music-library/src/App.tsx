@@ -7,6 +7,7 @@ import AlbumPage from "./pages/AlbumPage/AlbumPage";
 import ArtistPage from "./pages/ArtistPage/ArtistPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import { ArtistProvider } from "./components/ArtistContext";
+import MyLibrary from "./pages/MyLibrary/MyLibrary";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
               <Route path="/search" element={<SearchPage />} />
               <Route path="/artists/:artistId" element={<ArtistPage />} />
               <Route path="/albums/:albumId" element={<AlbumPage />} />
+              <Route path="/my-library" element={<MyLibrary />} />
             </Routes>
           </div>
         </div>

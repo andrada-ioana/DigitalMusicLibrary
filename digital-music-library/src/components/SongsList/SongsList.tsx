@@ -4,6 +4,7 @@ import "./SongsList.css";
 import CustomButton from ".././CustomButton";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useArtists } from "../ArtistContext";
+import DOMPurify from "dompurify";
 
 interface SongsListProps {
   songs: Song[];
@@ -22,7 +23,12 @@ const SongsList: React.FC<SongsListProps> = ({ songs }) => {
         {songs.map((song) => (
           <li key={song.id} className="list-group-item">
             <div className="list-element">
-              <div className="song-title">{song.title}</div>
+              <div
+                className="song-title"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(song.title),
+                }}
+              />
               <div className="fav-length">
                 <CustomButton
                   label=""
