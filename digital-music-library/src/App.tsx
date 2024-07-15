@@ -4,6 +4,8 @@ import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 import { Artist } from "./types/Artist";
+import AlbumPage from "./pages/AlbumPage";
+import ArtistPage from "./pages/ArtistPage";
 
 const App: React.FC = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
@@ -12,7 +14,14 @@ const App: React.FC = () => {
     fetch("/api/artists")
       .then((response) => response.json())
       .then((data) => {
-        setArtists(data); // Assuming the response directly provides an array of artists
+        const updatedArtists = data.map((artist: Artist) => {
+          const updatedAlbums = artist.albums.map((album) => ({
+            ...album,
+            artistID: artist.id,
+          }));
+          return { ...artist, albums: updatedAlbums };
+        });
+        setArtists(updatedArtists);
       })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
@@ -24,6 +33,22 @@ const App: React.FC = () => {
         <div className="content">
           <Routes>
             <Route path="/" element={<HomePage artists={artists} />} />
+            {artists.map((artist) =>
+              artist.albums.map((album) => (
+                <Route
+                  key={album.id}
+                  path={`/albums/${album.id}`}
+                  element={<AlbumPage album={album} artists={artists} />}
+                />
+              ))
+            )}
+            {artists.map((artist) => (
+              <Route
+                key={artist.id}
+                path={`/artists/${artist.id}`}
+                element={<ArtistPage artist={artist} />}
+              />
+            ))}
           </Routes>
         </div>
       </div>

@@ -1,13 +1,21 @@
 .artists-scroll {
   display: flex;
   overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem;
-  margin: 1rem 0;
+  margin-top: 20px;
+}
+
+.albums-scroll {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 20px;
 }
 
 
 .album-style {
   display: inline-block;
   vertical-align: top;
+}
+
+.artists-section {
+  margin-bottom: 60px;
 }

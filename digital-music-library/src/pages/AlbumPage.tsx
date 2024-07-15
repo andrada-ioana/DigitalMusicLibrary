@@ -5,6 +5,7 @@ import SongsList from "../components/SongsList";
 import "./AlbumPage.css";
 import { Album } from "../types/Album";
 import { Artist } from "../types/Artist";
+import { useNavigate } from "react-router-dom";
 
 interface AlbumPageProps {
   album: Album;
@@ -12,11 +13,13 @@ interface AlbumPageProps {
 }
 
 const AlbumPage: React.FC<AlbumPageProps> = ({ album, artists }) => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <CustomButton
         iconFront={<IoIosArrowRoundBack size="30" />}
-        onClick={() => console.log("Button clicked")}
+        onClick={() => navigate("/artists/" + album.artistID)}
         className="custom-button"
         label=""
       />
@@ -31,8 +34,7 @@ const AlbumPage: React.FC<AlbumPageProps> = ({ album, artists }) => {
             description={album.description}
           />
         </div>
-        /// Add the SongsList component here
-        <SongsList songs={[]} />
+        <SongsList songs={album.songs} />
       </div>
     </div>
   );

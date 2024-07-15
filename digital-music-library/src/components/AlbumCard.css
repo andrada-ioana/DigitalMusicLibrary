@@ -19,6 +19,9 @@
     display: flex;
     justify-content: space-between;
     align-items:center;
+    margin: 5%;
+    height: 60px;
+    width: 180px;
 }
 
 .card-title {
@@ -32,16 +35,17 @@
 }
 
 .play-button {
-    background-color: rgb(187, 143, 227);
+    background-color: rgb(221, 194, 246);
     border: none;
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline;
-    font-size: 14px;
+    font-size: 12px;
     margin: 4px 4px;
     cursor: pointer;
     border-radius: 100%;
+    margin-right: 8%;
 }
 
 .card-title-artist {
