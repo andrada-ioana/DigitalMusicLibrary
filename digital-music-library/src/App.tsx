@@ -9,6 +9,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import { ArtistProvider } from "./components/ArtistContext";
 import MyLibrary from "./pages/MyLibrary/MyLibrary";
 import AddSongForm from "./components/AddSongForm/AddSongForm";
+import AddArtistForm from "./components/AddArtistForm/AddArtistForm";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
               <Route path="/albums/:albumId" element={<AlbumPage />} />
               <Route path="/my-library" element={<MyLibrary />} />
               <Route path="/add-song/:albumId" element={<AddSongForm />} />
+              <Route path="/add-artist" element={<AddArtistForm />} />
             </Routes>
           </div>
         </div>

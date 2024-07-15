@@ -5,10 +5,12 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import { Album } from "../../types/Album";
 import "./HomePage.css";
 import { useArtists } from "../../components/ArtistContext";
+import { useNavigate } from "react-router-dom";
 
 const HomePage: React.FC = () => {
   const { artists } = useArtists();
   const allAlbums: Album[] = artists.flatMap((artist) => artist.albums);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,7 +18,7 @@ const HomePage: React.FC = () => {
         <div>
           <CustomButton
             label="Add Artist"
-            onClick={() => console.log("Button clicked")}
+            onClick={() => navigate("/add-artist")}
             className="custom-button"
             iconBack={<IoIosArrowRoundForward size="30" />}
           />
