@@ -7,12 +7,10 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import "./SearchPage.css";
 import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useArtists } from "../../components/ArtistContext";
 
-interface SearchPageProps {
-  artists: Artist[];
-}
-
-const SearchPage: React.FC<SearchPageProps> = ({ artists }) => {
+const SearchPage: React.FC = () => {
+  const { artists } = useArtists();
   const [filteredArtists, setFilteredArtists] = useState<Artist[]>([]);
   const [filteredAlbums, setFilteredAlbums] = useState<Album[]>([]);
 

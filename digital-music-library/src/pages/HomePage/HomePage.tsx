@@ -2,15 +2,12 @@ import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import AlbumCard from "../../components/AlbumCard/AlbumCard";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
-import { Artist } from "../../types/Artist";
 import { Album } from "../../types/Album";
 import "./HomePage.css";
+import { useArtists } from "../../components/ArtistContext";
 
-interface HomePageProps {
-  artists: Artist[];
-}
-
-const HomePage: React.FC<HomePageProps> = ({ artists }) => {
+const HomePage: React.FC = () => {
+  const { artists } = useArtists();
   const allAlbums: Album[] = artists.flatMap((artist) => artist.albums);
 
   return (

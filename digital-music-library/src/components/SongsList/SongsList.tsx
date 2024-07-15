@@ -1,29 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Song } from "../../types/Song";
 import "./SongsList.css";
 import CustomButton from ".././CustomButton";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { useArtists } from "../ArtistContext";
 
 interface SongsListProps {
   songs: Song[];
 }
 
 const SongsList: React.FC<SongsListProps> = ({ songs }) => {
-  const [songList, setSongList] = useState<Song[]>(songs);
-
+  const { updateSongFavouriteStatus } = useArtists();
   const toggleFavourite = (id: string) => {
-    setSongList((prevSongs) =>
-      prevSongs.map((song) =>
-        song.id === id ? { ...song, isFavourite: !song.isFavourite } : song
-      )
-    );
+    updateSongFavouriteStatus(id);
   };
 
   return (
     <>
-      {songList.length === 0 && <p>No items found</p>}
+      {songs.length === 0 && <p>No items found</p>}
       <ul className="list-group">
-        {songList.map((song) => (
+        {songs.map((song) => (
           <li key={song.id} className="list-group-item">
             <div className="list-element">
               <div className="song-title">{song.title}</div>

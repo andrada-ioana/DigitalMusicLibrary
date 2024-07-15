@@ -3,18 +3,19 @@ import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import SongsList from "../../components/SongsList/SongsList";
 import "./AlbumPage.css";
-import { Album } from "../../types/Album";
-import { Artist } from "../../types/Artist";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useArtists } from "../../components/ArtistContext";
 
-interface AlbumPageProps {
-  album: Album;
-  artists: Artist[];
-}
-
-const AlbumPage: React.FC<AlbumPageProps> = ({ album, artists }) => {
+const AlbumPage: React.FC = () => {
   const navigate = useNavigate();
-
+  const { albumId } = useParams();
+  const { artists } = useArtists();
+  const album = artists
+    .flatMap((artist) => artist.albums)
+    .find((album) => album.id === albumId);
+  if (!album) {
+    return <div>Album not found</div>;
+  }
   return (
     <div>
       <CustomButton
