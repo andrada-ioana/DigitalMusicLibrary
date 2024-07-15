@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
+import "./NavLink.css";
 
 interface NavLinkProps {
   to: string;

@@ -15,11 +15,10 @@ const HomePage: React.FC = () => {
       <div className="artists-section">
         <div>
           <CustomButton
-            label="Artists"
+            label="Add Artist"
             onClick={() => console.log("Button clicked")}
             className="custom-button"
             iconBack={<IoIosArrowRoundForward size="30" />}
-            disabled={true}
           />
         </div>
 
@@ -32,11 +31,10 @@ const HomePage: React.FC = () => {
       <div className="albums-section">
         <div>
           <CustomButton
-            label="Albums"
+            label="Add Album"
             onClick={() => console.log("Button clicked")}
             className="custom-button"
             iconBack={<IoIosArrowRoundForward size="30" />}
-            disabled={true}
           />
         </div>
 

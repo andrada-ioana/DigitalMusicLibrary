@@ -1,19 +1,25 @@
 import React from "react";
 import { Song } from "../../types/Song";
 import "./SongsList.css";
-import CustomButton from ".././CustomButton";
+import CustomButton from "../CustomButton";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useArtists } from "../ArtistContext";
 import DOMPurify from "dompurify";
+import { IoTrashOutline } from "react-icons/io5";
 
 interface SongsListProps {
   songs: Song[];
 }
 
 const SongsList: React.FC<SongsListProps> = ({ songs }) => {
-  const { updateSongFavouriteStatus } = useArtists();
+  const { updateSongFavouriteStatus, deleteSong } = useArtists();
+
   const toggleFavourite = (id: string) => {
     updateSongFavouriteStatus(id);
+  };
+
+  const deleteSongHandler = (id: string) => {
+    deleteSong(id);
   };
 
   return (
@@ -40,6 +46,12 @@ const SongsList: React.FC<SongsListProps> = ({ songs }) => {
                     )
                   }
                   onClick={() => toggleFavourite(song.id)}
+                  className="custom-button"
+                />
+                <CustomButton
+                  label=""
+                  iconFront={<IoTrashOutline size={17} />}
+                  onClick={() => deleteSongHandler(song.id)}
                   className="custom-button"
                 />
                 <div className="song-length">{song.length}</div>

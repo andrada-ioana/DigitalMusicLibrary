@@ -6,12 +6,17 @@ import { useArtists } from "../../components/ArtistContext";
 import CustomButton from "../../components/CustomButton";
 import noItemFound from "../../assets/images/no_image_found.png";
 import DOMPurify from "dompurify";
+import { IoTrashOutline } from "react-icons/io5";
 
 const MyLibrary: React.FC = () => {
-  const { artists, updateSongFavouriteStatus } = useArtists();
+  const { artists, updateSongFavouriteStatus, deleteSong } = useArtists();
 
   const toggleFavourite = (id: string) => {
     updateSongFavouriteStatus(id);
+  };
+
+  const deleteSongHandler = (id: string) => {
+    deleteSong(id);
   };
 
   const songs: Song[] = artists
@@ -46,6 +51,12 @@ const MyLibrary: React.FC = () => {
                       )
                     }
                     onClick={() => toggleFavourite(song.id)}
+                    className="custom-button"
+                  />
+                  <CustomButton
+                    label=""
+                    iconFront={<IoTrashOutline size={17} />}
+                    onClick={() => deleteSongHandler(song.id)}
                     className="custom-button"
                   />
                   <div className="song-length">{song.length}</div>
