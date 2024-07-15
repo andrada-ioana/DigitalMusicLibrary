@@ -1,8 +1,8 @@
 import React from "react";
-import defaultImage from "../assets/images/no_image.jpg";
+import defaultImage from "../../assets/images/no_image.jpg";
 import "./ArtistCard.css";
 import { useNavigate } from "react-router-dom";
-import { Artist } from "../types/Artist";
+import { Artist } from "../../types/Artist";
 
 interface ArtistCardProps {
   artist: Artist;

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import "./App.css";
 import { Artist } from "./types/Artist";
-import AlbumPage from "./pages/AlbumPage";
-import ArtistPage from "./pages/ArtistPage";
+import AlbumPage from "./pages/AlbumPage/AlbumPage";
+import ArtistPage from "./pages/ArtistPage/ArtistPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const App: React.FC = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
@@ -49,6 +50,8 @@ const App: React.FC = () => {
                 element={<ArtistPage artist={artist} />}
               />
             ))}
+
+            <Route path="/search" element={<SearchPage artists={artists} />} />
           </Routes>
         </div>
       </div>

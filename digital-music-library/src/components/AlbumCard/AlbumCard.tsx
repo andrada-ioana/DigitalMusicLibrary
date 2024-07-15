@@ -1,10 +1,10 @@
 import React from "react";
-import defaultImage from "../assets/images/no_image.jpg";
+import defaultImage from "../../assets/images/no_image.jpg";
 import "./AlbumCard.css";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../CustomButton";
 import { FaPlay } from "react-icons/fa";
-import { Album } from "../types/Album";
-import { Artist } from "../types/Artist";
+import { Album } from "../../types/Album";
+import { Artist } from "../../types/Artist";
 import { useNavigate } from "react-router-dom";
 
 interface AlbumCardProps {

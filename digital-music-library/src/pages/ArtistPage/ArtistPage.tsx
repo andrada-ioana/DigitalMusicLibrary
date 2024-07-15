@@ -1,10 +1,10 @@
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import "./ArtistPage.css";
-import { Artist } from "../types/Artist";
+import { Artist } from "../../types/Artist";
 import { useNavigate } from "react-router-dom";
-import { Album } from "../types/Album";
-import AlbumCard from "../components/AlbumCard";
+import { Album } from "../../types/Album";
+import AlbumCard from "../../components/AlbumCard/AlbumCard";
 
 interface AlbumPageProps {
   artist: Artist;

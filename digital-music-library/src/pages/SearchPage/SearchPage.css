@@ -1,0 +1,19 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+}
+
+.artists-section {
+    margin-bottom: 60px;
+}
+
+.artists-result {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-bar {
+    margin-bottom: 30px;
+}

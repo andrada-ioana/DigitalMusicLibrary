@@ -1,5 +1,5 @@
 import React from "react";
-import defaultImage from "../assets/images/no_image.jpg";
+import defaultImage from "../../assets/images/no_image.jpg";
 import "./AlbumDescription.css";
 
 interface AlbumDescriptionProps {

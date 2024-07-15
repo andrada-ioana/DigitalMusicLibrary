@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Song } from "../types/Song";
+import { Song } from "../../types/Song";
 import "./SongsList.css";
-import CustomButton from "./CustomButton";
+import CustomButton from ".././CustomButton";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 interface SongsListProps {

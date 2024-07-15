@@ -1,9 +1,9 @@
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import AlbumCard from "../components/AlbumCard";
-import ArtistCard from "../components/ArtistCard";
-import { Artist } from "../types/Artist";
-import { Album } from "../types/Album";
+import AlbumCard from "../../components/AlbumCard/AlbumCard";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
+import { Artist } from "../../types/Artist";
+import { Album } from "../../types/Album";
 import "./HomePage.css";
 
 interface HomePageProps {

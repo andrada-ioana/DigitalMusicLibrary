@@ -1,10 +1,10 @@
-import AlbumDescription from "../components/AlbumDescription";
-import CustomButton from "../components/CustomButton";
+import AlbumDescription from "../../components/AlbumDescription/AlbumDescription";
+import CustomButton from "../../components/CustomButton";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import SongsList from "../components/SongsList";
+import SongsList from "../../components/SongsList/SongsList";
 import "./AlbumPage.css";
-import { Album } from "../types/Album";
-import { Artist } from "../types/Artist";
+import { Album } from "../../types/Album";
+import { Artist } from "../../types/Artist";
 import { useNavigate } from "react-router-dom";
 
 interface AlbumPageProps {
