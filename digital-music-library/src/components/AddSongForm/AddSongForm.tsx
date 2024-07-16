@@ -82,11 +82,13 @@ const AddSongForm: React.FC = () => {
             />
           </div>
         </div>
-        <button type="submit">Add</button>
+        <div className="buttons-style">
+          <button type="submit">Add</button>
+          <button className="back-button" onClick={handleBack}>
+            Back
+          </button>
+        </div>
       </form>
-      <button className="back-button" onClick={handleBack}>
-        Back
-      </button>
     </div>
   );
 };

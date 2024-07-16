@@ -72,6 +72,7 @@ button[type="submit"]:hover, .back-button:hover {
 .back-button {
   margin-top: 10px;
   background-color: #6c757d;
+  width: 350px;
 }
 
 .back-button:hover {
@@ -82,4 +83,11 @@ button[type="submit"]:hover, .back-button:hover {
   .length-inputs input {
     width: 50px;
   }
+}
+
+.buttons-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
