@@ -6,7 +6,7 @@ The user can add or delete artists, albums and songs, update albums' description
 - Node.js (version 14.x or higher)
 - npm (version 6.x or higher)
 
-### Installation
+## Installation
 
 ### Clone the Repository
 1. Clone the repository and navigate to the project directory:
@@ -40,7 +40,7 @@ The user can add or delete artists, albums and songs, update albums' description
     ```
     npm run build
     ```
-    Builds the frontend for production.
+    Builds the frontend for production. After running the Backend, click on the link printed on the terminal.
 
 
 ### Running the Frontend
