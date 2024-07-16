@@ -33,8 +33,8 @@ const HomePage: React.FC = () => {
       <div className="albums-section">
         <div>
           <CustomButton
-            label="Add Album"
-            onClick={() => console.log("Button clicked")}
+            label="Add New Album"
+            onClick={() => navigate("/add-album")}
             className="custom-button"
             iconBack={<IoIosArrowRoundForward size="30" />}
           />

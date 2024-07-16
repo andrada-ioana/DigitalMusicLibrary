@@ -145,14 +145,14 @@ export const ArtistProvider: React.FC<ArtistProviderProps> = ({ children }) => {
       value={{
         artists,
         setArtists,
-        updateSongFavouriteStatus, //
+        updateSongFavouriteStatus,
         addArtist,
         addAlbum,
-        addSong, //
+        addSong,
         deleteArtist,
         deleteAlbum,
-        deleteSong, //
-        updateAlbumDescription, //
+        deleteSong,
+        updateAlbumDescription,
       }}
     >
       {children}

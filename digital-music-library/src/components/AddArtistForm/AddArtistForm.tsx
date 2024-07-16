@@ -30,15 +30,15 @@ const AddArtistForm: React.FC = () => {
           placeholder="Artist Name"
           required
         />
+        <div className="buttons-style">
+          <button type="submit" className="submit-button">
+            Add
+          </button>
+          <button onClick={handleBack} className="back-button">
+            Back
+          </button>
+        </div>
       </form>
-      <div className="buttons-style">
-        <button type="submit" className="submit-button">
-          Add
-        </button>
-        <button onClick={handleBack} className="back-button">
-          Back
-        </button>
-      </div>
     </div>
   );
 };

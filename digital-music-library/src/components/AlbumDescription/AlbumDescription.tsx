@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import defaultImage from "../../assets/images/no_image.jpg";
 import "./AlbumDescription.css";
 import CustomButton from "../CustomButton";
-import { FaEdit, FaCheck } from "react-icons/fa";
+import { FaEdit, FaCheck, FaTrash } from "react-icons/fa";
 import { useArtists } from "../../components/ArtistContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Album } from "../../types/Album";
 
 interface AlbumDescriptionProps {
@@ -24,8 +24,9 @@ const AlbumDescription: React.FC<AlbumDescriptionProps> = ({
 }) => {
   const [description, setDescription] = useState(initialDescription);
   const [isEditing, setIsEditing] = useState(false);
-  const { updateAlbumDescription } = useArtists();
+  const { updateAlbumDescription, deleteAlbum } = useArtists();
   const { albumId } = useParams();
+  const navigate = useNavigate();
 
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
@@ -47,6 +48,11 @@ const AlbumDescription: React.FC<AlbumDescriptionProps> = ({
     };
     updateAlbumDescription(albumId || "", newAlbum);
     setIsEditing(false);
+  };
+
+  const handleDeleteAlbum = () => {
+    deleteAlbum(albumId || "");
+    navigate("/"); // Redirect to home or appropriate page after deletion
   };
 
   return (
@@ -83,6 +89,12 @@ const AlbumDescription: React.FC<AlbumDescriptionProps> = ({
               iconBack={<FaEdit size={15} />}
               label=""
               onClick={handleEditToggle}
+              className="custom-button"
+            />
+            <CustomButton
+              iconBack={<FaTrash size={15} />}
+              label=""
+              onClick={handleDeleteAlbum}
               className="custom-button"
             />
           </div>

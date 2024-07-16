@@ -37,7 +37,7 @@
   
   .back-button {
     background-color: #6c757d;
-    width: 120px;
+    width: 100px;
   }
   
   .back-button:hover {
@@ -46,7 +46,7 @@
 
   .buttons-style {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
 }
   
