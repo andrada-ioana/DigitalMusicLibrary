@@ -37,7 +37,7 @@ The user can add or delete artists, albums and songs, update albums' description
     ```
 
 ### Running the Project
-Builds the frontend for production. After running the Backend, click on the link printed on the terminal.
+Builds the frontend for production. After running the Backend, click on the link printed on the terminal and you will see the final product.
     ```
     npm run build
     ```
