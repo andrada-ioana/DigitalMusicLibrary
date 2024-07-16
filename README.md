@@ -1,22 +1,20 @@
 # Digital Music Library
-
-# Description
 This project is a digital music library application that allows users to manage their music collection. It uses React for the frontend and Express with SQLite for the backend.
 The user can add or delete artists, albums and songs, update albums' description and save their favourite songs.
 
-# Prerequisites
+### Prerequisites
 - Node.js (version 14.x or higher)
 - npm (version 6.x or higher)
 
-# Installation
+### Installation
 
-# Clone the Repository
+### Clone the Repository
 1. Clone the repository and navigate to the project directory:
     ```
     cd digital-music-library
     ```
 
-# Set up the Frontend
+### Set up the Frontend
 2. Install dependencies:
     ```
     npm install
@@ -28,7 +26,7 @@ The user can add or delete artists, albums and songs, update albums' description
     npm run build
     ```
 
-# Set up the Backend
+### Set up the Backend
 3. Navigate to the backend directory, initialize the backend project and install dependencies:
     ```
     cd music-database
@@ -38,14 +36,14 @@ The user can add or delete artists, albums and songs, update albums' description
     npm install dotenv
     ```
 
-# Running the Project
+### Running the Project
     ```
     npm run build
     ```
     Builds the frontend for production.
 
 
-# Running the Frontend
+### Running the Frontend
 1. To start the development server for the frontend, run:
     ```
     cd digital-music-library
@@ -53,7 +51,7 @@ The user can add or delete artists, albums and songs, update albums' description
     ```
    This will start Vite's development server with Hot Module Replacement.
 
-# Running the Backend
+### Running the Backend
 2. To start the backend server, run:
     ```bash
     cd music-database
